@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: api
+  data:
+    mongodb:
+      auto-index-creation: true
+      uri: mongodb+srv://nishalbm:VA9K9vshp2MRWgEZ@cluster0.xwpqy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: agencyconnect
+  threads:
+    virtual:
+      enabled: true
+server:
+  port: 8080

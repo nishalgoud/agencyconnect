@@ -1,5 +1,6 @@
 package com.agencyconnect.api.controller;
 
+import com.agencyconnect.api.annotation.PermissionStore;
 import com.agencyconnect.api.model.Organization;
 import com.agencyconnect.api.service.OrganizationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ public class OrganizationController {
     @Autowired
     private OrganizationService organizationService;
 
+    @PermissionStore(global = {"read", "write"}, organization = {"edit"}, agency = {"view"})
     @GetMapping
     public ResponseEntity<List<Organization>> getAllOrganizations() {
         List<Organization> organizations = organizationService.getAllOrganizations();
